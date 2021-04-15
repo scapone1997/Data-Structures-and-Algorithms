@@ -24,7 +24,6 @@ class nodo_pila{
         nodo_pila<T>* succ;
 };
 
-
 template <class T>
 class Pila{
 
@@ -54,7 +53,6 @@ class Pila{
         int lunghezza;
 };
 
-
 template <class T>
 Pila<T>::Pila(){
 
@@ -79,7 +77,6 @@ Pila<T>::Pila(const Pila<T>& P){
    }
 }
 
-
 template <class T>
 Pila<T>::~Pila(){
 
@@ -87,7 +84,6 @@ Pila<T>::~Pila(){
 		pop();
 	delete testa;
 }
-
 
 template <class T>
 void Pila<T>::create(){
@@ -103,7 +99,6 @@ bool Pila<T>::empty() const{
 
 	return (lunghezza == 0);
 }
-
 
 template <class T>
 T Pila<T>::read() const{
@@ -129,7 +124,6 @@ void Pila<T>::pop() {
 	else
 		throw PilaVuota();
 }
-
 
 template <class T>
 void Pila<T>::push(const T& e){
@@ -160,7 +154,6 @@ int Pila<T>::size() const{
 
 	return lunghezza;
 }
-
 
 template <class T>
 bool Pila<T>::exist(const T& v) const{
