@@ -21,18 +21,15 @@ class eccezioni_lista{
 		string message;
 };
 
-
 class ListaVuota : public eccezioni_lista{
 	public:
 		ListaVuota() : eccezioni_lista("Eccezione lista vuota") {};
 };
 
-
 class ListaPiena : public eccezioni_lista{
 	public:
 		ListaPiena() : eccezioni_lista("Eccezione lista piena") {};
 };
-
 
 class PosizioneNonValida : public eccezioni_lista{
 	public:
