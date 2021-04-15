@@ -17,7 +17,6 @@ class Lista;
 template<class T>
 class ListaOrdinata;
 
-
 template<class T>
 class ListNode{
 	friend class Lista<T>;
@@ -28,7 +27,6 @@ class ListNode{
 		ListNode<T>* prec;
 		ListNode<T>* succ;
 };
-
 
 template<class T>
 class Lista : public LinearList<T, ListNode<T>*>{
@@ -63,13 +61,11 @@ class Lista : public LinearList<T, ListNode<T>*>{
 		int lunghezza;
 };
 
-
 template<class T>
 Lista<T>::Lista(){
 
 	creaLista();
 }
-
 
 template<class T>
 Lista<T>::Lista(const Lista<T>& L) {
@@ -84,7 +80,6 @@ Lista<T>::Lista(const Lista<T>& L) {
 	}
 }
 
-
 template<class T>
 Lista<T>::~Lista(){
 
@@ -92,7 +87,6 @@ Lista<T>::~Lista(){
 		cancellaLista(primoLista());
 	delete testa;
 }
-
 
 template<class T>
 void Lista<T>::creaLista(){
@@ -103,14 +97,11 @@ void Lista<T>::creaLista(){
 	 lunghezza = 0;
 }
 
-
 template<class T>
 bool Lista<T>::listaVuota() const{
 
 	return(testa->succ == testa);
 }
-
-
 
 template<class T>
 typename Lista<T>::posizione Lista<T>::primoLista() const{
@@ -118,13 +109,11 @@ typename Lista<T>::posizione Lista<T>::primoLista() const{
 	return (testa->succ);
 }
 
-
 template<class T>
 typename Lista<T>::posizione Lista<T>::ultimoLista() const{
 
 	return (testa->prec);
 }
-
 
 template<class T>
 typename Lista<T>::posizione Lista<T>::successivo(posizione p) const{
@@ -132,20 +121,17 @@ typename Lista<T>::posizione Lista<T>::successivo(posizione p) const{
 	return(p->succ);
 }
 
-
 template<class T>
 typename Lista<T>::posizione Lista<T>::precedente(posizione p) const{
 
 	return(p->prec);
 }
 
-
 template<class T>
 bool Lista<T>::fineLista(posizione p) const{
 
 	return(p == testa);
 }
-
 
 template<class T>
 typename Lista<T>::tipo Lista<T>::leggiLista(posizione p) const {
@@ -156,7 +142,6 @@ typename Lista<T>::tipo Lista<T>::leggiLista(posizione p) const {
 		throw ListaVuota();
 }
 
-
 template<class T>
 void Lista<T>::scriviLista(const tipo &valore, posizione p) {
 
@@ -165,7 +150,6 @@ void Lista<T>::scriviLista(const tipo &valore, posizione p) {
 	else
 		throw ListaVuota();
 }
-
 
 template<class T>
 void Lista<T>::inserireLista(const tipo &elemento, posizione p){
@@ -178,7 +162,6 @@ void Lista<T>::inserireLista(const tipo &elemento, posizione p){
 	testa->prec = n;
 	lunghezza++;
 }
-
 
 template<class T>
 void Lista<T>::cancellaLista(posizione p){
@@ -194,7 +177,6 @@ void Lista<T>::cancellaLista(posizione p){
 	}
 }
 
-
 template<class T>
 typename Lista<T>::posizione Lista<T>::pos_elemento(const tipo& e) const{
 
@@ -206,7 +188,6 @@ typename Lista<T>::posizione Lista<T>::pos_elemento(const tipo& e) const{
 	}else
 		throw ListaVuota();
 }
-
 
 /****
 Inverte la lista utilizzando solo i puntatori.
