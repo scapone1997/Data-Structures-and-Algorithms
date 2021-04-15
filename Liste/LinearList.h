@@ -11,7 +11,6 @@
 #include <iostream>
 using namespace std;
 
-
 template<class T, class P>
 class LinearList{
 
@@ -81,7 +80,6 @@ bool LinearList<T, P>::esiste(const tipo& e) const{
 	return esito;
 }
 
-
 template<class T, class P>
 int LinearList<T, P>::dimensione() const{
 
@@ -92,7 +90,6 @@ int LinearList<T, P>::dimensione() const{
 
 	return dimensione;
 }
-
 
 template<class T, class P>
 void LinearList<T, P>::inverti() {
@@ -116,7 +113,6 @@ void LinearList<T, P>::inverti() {
 	}
 }
 
-
 template<class T, class P>
 void LinearList<T, P>::clear(){
 
@@ -124,7 +120,6 @@ void LinearList<T, P>::clear(){
 		cancellaLista(primoLista());
 }
 
-//ok
 template<class T, class P>
 int LinearList<T, P>::num_elementi(posizione p1, posizione p2){
 
@@ -142,7 +137,6 @@ int LinearList<T, P>::num_elementi(posizione p1, posizione p2){
 		return 0;
 }
 
-
 template<class T, class P>
 void LinearList<T, P>::exchange(LinearList<T, P>::posizione p1, LinearList<T, P>::posizione p2){
 
@@ -151,7 +145,6 @@ void LinearList<T, P>::exchange(LinearList<T, P>::posizione p1, LinearList<T, P>
 	scriviLista(temp, p2);
 }
 
-//Problema: le posizioni entrano possono entrare in conflitto
 template<class T, class P>
 void LinearList<T, P>::move_min_max(){
 
@@ -182,7 +175,6 @@ void LinearList<T, P>::move_min_max(){
 	}
 }
 
-
 template<class T, class P>
 bool LinearList<T, P>::palindroma() const{
 
@@ -206,7 +198,6 @@ bool LinearList<T, P>::palindroma() const{
 	return esito;
 }
 
-
 template<class T, class P>
 bool LinearList<T, P>::operator==(const LinearList<T, P>& altra) const{
 
@@ -229,7 +220,6 @@ bool LinearList<T, P>::operator==(const LinearList<T, P>& altra) const{
 	return esito;
 }
 
-
 template<class T, class P>
 bool LinearList<T, P>::operator!=(const LinearList<T, P>& altra) const{
 
@@ -251,7 +241,5 @@ bool LinearList<T, P>::operator!=(const LinearList<T, P>& altra) const{
 	}
 	return esito;
 }
-
-
 
 #endif /* LINEARLIST_H_ */
