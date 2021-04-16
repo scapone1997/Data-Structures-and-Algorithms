@@ -29,13 +29,10 @@ int main(){
 	//Calcolo la profondita dell'albero
 	cout << "Profondita' A: " << A.profondita(A.radice()) << endl;
 
-	//Calcolo la larghezza dell'albero 
-	cout << "Larghezza A: " << A.larghezza() << endl;
-
 	//Visito l'albero per verificare l'esistenza di un numero attraverso il metodo esiste()
 	cout << "Esiste il numero 57 nell'albero A? " << (A.esiste(57)) << endl;
 
-	//Inserisco albero B come sottoalber
+	//Appendo l'albero B alla radice di A
 	A.ins_sottoalbero(A.radice(), B);
 
 	return 0;
