@@ -57,7 +57,6 @@ class Albero_binario_v : public Albero_binario_astratto<T, int>{
 
 };
 
-
 template <class T>
 Albero_binario_v<T>::Albero_binario_v(){
 
@@ -65,7 +64,6 @@ Albero_binario_v<T>::Albero_binario_v(){
 	spazio = new Cella[lunghezza_max];
 	crea();
 }
-
 
 template <class T>
 Albero_binario_v<T>::Albero_binario_v(int n_nodi){
@@ -75,14 +73,12 @@ Albero_binario_v<T>::Albero_binario_v(int n_nodi){
 	crea();
 }
 
-
 template <class T>
 Albero_binario_v<T>::~Albero_binario_v(){
 
 	cancella(inizio);
 	delete[] spazio;
 }
-
 
 template <class T>
 void Albero_binario_v<T>::crea(){
@@ -96,13 +92,11 @@ void Albero_binario_v<T>::crea(){
 
 }
 
-
 template <class T>
 bool Albero_binario_v<T>::vuoto() const{
 
 	return(n_nodi == 0);
 }
-
 
 template <class T>
 typename Albero_binario_v<T>::Nodo Albero_binario_v<T>::radice() const{
@@ -110,13 +104,11 @@ typename Albero_binario_v<T>::Nodo Albero_binario_v<T>::radice() const{
 	return inizio;
 }
 
-
 template <class T>
 typename Albero_binario_v<T>::Nodo Albero_binario_v<T>::genitore(Nodo n) const{
 
 	return spazio[n].genitore;
 }
-
 
 template <class T>
 typename Albero_binario_v<T>::Nodo Albero_binario_v<T>::sinistro(Nodo n) const{
@@ -127,7 +119,6 @@ typename Albero_binario_v<T>::Nodo Albero_binario_v<T>::sinistro(Nodo n) const{
 		return NIL;
 };
 
-
 template <class T>
 typename Albero_binario_v<T>::Nodo Albero_binario_v<T>::destro(Nodo n) const {
 
@@ -137,20 +128,17 @@ typename Albero_binario_v<T>::Nodo Albero_binario_v<T>::destro(Nodo n) const {
 		return NIL;
 }
 
-
 template <class T>
 bool Albero_binario_v<T>::sinistro_vuoto(Nodo n) const{
 
 	return (spazio[n].sinistro == NIL);
 }
 
-
 template <class T>
 bool Albero_binario_v<T>::destro_vuoto(Nodo n) const{
 
 	return (spazio[n].destro == NIL);
 }
-
 
 template <class T>
 void Albero_binario_v<T>::inserire_radice(Nodo n){
@@ -166,7 +154,6 @@ void Albero_binario_v<T>::inserire_radice(Nodo n){
 	else
 		throw RadiceEsiste();
 }
-
 
 template <class T>
 void Albero_binario_v<T>::inserire_sinistro(Nodo n){
@@ -191,7 +178,6 @@ void Albero_binario_v<T>::inserire_sinistro(Nodo n){
     }
 }
 
-
 template <class T>
 void Albero_binario_v<T>::inserire_destro(Nodo n){
 
@@ -214,7 +200,6 @@ void Albero_binario_v<T>::inserire_destro(Nodo n){
 		n_nodi++;
     }
 }
-
 
 template <class T>
 void Albero_binario_v<T>::cancella(Nodo n){
@@ -242,7 +227,6 @@ void Albero_binario_v<T>::cancella(Nodo n){
     }
 }
 
-
 template <class T>
 T Albero_binario_v<T>::leggi(Nodo n) const{
 
@@ -251,7 +235,6 @@ T Albero_binario_v<T>::leggi(Nodo n) const{
 	else
 		throw NodoNullo();
 }
-
 
 template <class T>
 void Albero_binario_v<T>::scrivi(Nodo n, tipo elemento){
