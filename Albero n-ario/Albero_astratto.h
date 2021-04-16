@@ -88,13 +88,6 @@ int Albero_astratto<I, N>::profondita(nodo n){
 	return max+1;
 }
 
-//Da fare
-template <class I, class N>
-int Albero_astratto<I, N>::larghezza(){
-
-	return 0;
-}
-
 template <class I, class N>
 void Albero_astratto<I, N>::larghezza(nodo& k, int& level, int* array){
 	array[level]++;
