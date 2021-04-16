@@ -36,8 +36,6 @@ class Albero_astratto{
 		bool esiste(tipo) const;
 		void esiste(nodo, tipo, bool&) const;
 		int profondita(nodo);
-		int larghezza();
-		void larghezza(nodo&, int&, int*);
 		void previsita();
 		void previsita(nodo); //?
 		void invisita();
@@ -86,11 +84,6 @@ int Albero_astratto<I, N>::profondita(nodo n){
 			max = p;
 	}
 	return max+1;
-}
-
-template <class I, class N>
-void Albero_astratto<I, N>::larghezza(nodo& k, int& level, int* array){
-	array[level]++;
 }
 
 template <class I, class N>
