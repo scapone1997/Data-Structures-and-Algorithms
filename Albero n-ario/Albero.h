@@ -26,7 +26,6 @@ class cella{
 		cella<I>* primo_figlio;
 };
 
-
 template <class I>
 class Albero : public Albero_astratto<I, cella<I>*>{
 
@@ -63,13 +62,11 @@ class Albero : public Albero_astratto<I, cella<I>*>{
 		cella<I>* inizio;
 };
 
-
 template <class I>
 Albero<I>::Albero(){
 
 	crea();
 }
-
 
 template <class I>
 Albero<I>::Albero(const Albero<I>& A){
@@ -79,7 +76,6 @@ Albero<I>::Albero(const Albero<I>& A){
 	else
 		crea();
 }
-
 
 template <class I>
 Albero<I>::~Albero(){
@@ -95,13 +91,11 @@ void Albero<I>::crea(){
 	inizio = nullptr;
 }
 
-
 template <class I>
 bool Albero<I>::vuoto() const{
 
 	return (inizio == nullptr);
 }
-
 
 template <class I>
 void Albero<I>::ins_radice(const tipo& e){
@@ -118,7 +112,6 @@ void Albero<I>::ins_radice(const tipo& e){
 		throw RadiceEsiste();
 }
 
-
 template <class I>
 typename Albero<I>::nodo Albero<I>::radice() const{
 
@@ -127,7 +120,6 @@ typename Albero<I>::nodo Albero<I>::radice() const{
 	else
 		throw AlberoVuoto();
 }
-
 
 template <class I>
 typename Albero<I>::nodo Albero<I>::padre(nodo n) const{
@@ -143,13 +135,11 @@ typename Albero<I>::nodo Albero<I>::padre(nodo n) const{
 		throw RadiceNonHaPadre();
 }
 
-
 template <class I>
 bool Albero<I>::foglia(nodo n) const{
 
 	return (n->primo_figlio == nullptr);
 }
-
 
 template <class I>
 typename Albero<I>::nodo Albero<I>::primo_figlio(nodo n) const{
@@ -160,13 +150,11 @@ typename Albero<I>::nodo Albero<I>::primo_figlio(nodo n) const{
 		throw QuestoNodoNonHaFigli();
 }
 
-
 template <class I>
 bool Albero<I>::ultimo_fratello(nodo n) const{
 
 	return (n->fratello == nullptr);
 }
-
 
 template <class I>
 typename Albero<I>::nodo Albero<I>::fratello_succ(nodo n) const{
@@ -176,7 +164,6 @@ typename Albero<I>::nodo Albero<I>::fratello_succ(nodo n) const{
 	else
 		throw QuestoNodoNonHaFratelli();
 }
-
 
 template <class I>
 void Albero<I>::cancella_sottoalbero(nodo n){
@@ -221,13 +208,11 @@ void Albero<I>::scrivi(nodo n, const tipo& e){
 	n->valore = e;
 }
 
-
 template <class I>
 typename Albero<I>::tipo Albero<I>::leggi(nodo n) const{
 
 	return n->valore;
 }
-
 
 template <class I>
 void Albero<I>::ins_primo_figlio(nodo n, const tipo& e){
@@ -260,7 +245,6 @@ void Albero<I>::ins_primo_figlio(nodo n, const tipo& e){
 	else
 		throw AlberoVuoto();
 }
-
 
 template <class I>
 void Albero<I>::ins_fratello(nodo n, const tipo& e){
@@ -296,7 +280,6 @@ void Albero<I>::ins_fratello(nodo n, const tipo& e){
 		throw AlberoVuoto();
 }
 
-
 template <class I>
 void Albero<I>::ins_primo_sottoalbero(nodo n, const Albero<I>& A){
 
@@ -313,7 +296,6 @@ void Albero<I>::ins_primo_sottoalbero(nodo n, const Albero<I>& A){
 			throw NodoNullo();
 	}
 }
-
 
 template <class I>
 void Albero<I>::ins_sottoalbero(nodo n, const Albero<I>& A){
@@ -345,7 +327,6 @@ void Albero<I>::ins_sottoalbero(nodo n, const Albero<I>& A){
 	}
 }
 
-
 template <class I>
 typename Albero<I>::nodo Albero<I>::copia_sottoalbero(nodo n, nodo g){
 
@@ -361,6 +342,5 @@ typename Albero<I>::nodo Albero<I>::copia_sottoalbero(nodo n, nodo g){
 	else
 		return nullptr;
 }
-
 
 #endif /* ALBERO_H_ */
