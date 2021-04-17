@@ -49,7 +49,6 @@ class CodaP{
   		void heapify(tipo arr[], int n, int i); //Converte vettore heap in un max_heap
 };
 
-
 template <class T>
 CodaP<T>::CodaP(){
 
@@ -57,7 +56,6 @@ CodaP<T>::CodaP(){
 	heap = new tipo[MAX];
  	crea_priori_coda();
 };
-
 
 template <class T>
 CodaP<T>::CodaP(int m){
@@ -67,20 +65,17 @@ CodaP<T>::CodaP(int m){
 	crea_priori_coda();
 };
 
-
 template <class T>
 CodaP <T>::~CodaP(){
 
 	delete[] heap;
 };
 
-
 template <class T>
 void CodaP<T>::crea_priori_coda(){
 
 	ultimo = 0;
 };
-
 
 template <class T>
 void CodaP<T>::inserisci(tipo e){
@@ -95,7 +90,6 @@ void CodaP<T>::inserisci(tipo e){
 		throw CodaPiena();
 };
 
-
 template <class T>
 typename CodaP<T>::tipo CodaP<T>::min(){
 
@@ -105,7 +99,6 @@ typename CodaP<T>::tipo CodaP<T>::min(){
 		throw CodaVuota();
 
 };
-
 
 template <class T>
 void CodaP<T>::cancella_min(){
@@ -120,8 +113,7 @@ void CodaP<T>::cancella_min(){
 		throw CodaVuota();
 };
 
-
-/* Per ripristinare i vincoli dell' heap quando la priorità di un nodo è      *
+/* Per ripristinare i vincoli dell' heap quando la prioritÃ  di un nodo Ã¨      *
  * cresciuta, ci spostiamo nell' heap verso l'alto, scambiando, se necessario,*
  * il nodo in posizione k con il suo nodo padre (in posizione k/2),           *
  * continuando fintanto che heap[k]<heap[k/2] oppure fino a quando            *
@@ -138,13 +130,12 @@ void CodaP<T>::fix_up(){
     }
 }
 
-
-/* Per ripristinare i vincoli dell' heap quando la priorità di un nodo si è   *
+/* Per ripristinare i vincoli dell' heap quando la prioritÃ  di un nodo si Ã¨   *
  * ridotta, ci spostiamo nell' heap verso il basso, scambiando, se necessario,*
  * il nodo in posizione k con il minore dei suoi nodi figli e arrestandoci    *
- * quando il nodo al posto k non è più grande di almeno uno dei suoi figli    *
- * oppure quando raggiungiamo il fondo dell' heap. Si noti che se N è pari e  *
- * k è N/2, allora il nodo in posizione k ha un solo figlio: questo caso      *
+ * quando il nodo al posto k non Ã¨ piÃ¹ grande di almeno uno dei suoi figli    *
+ * oppure quando raggiungiamo il fondo dell' heap. Si noti che se N Ã¨ pari e  *
+ * k Ã¨ N/2, allora il nodo in posizione k ha un solo figlio: questo caso      *
  * particolare deve essere trattato in modo appropriato.                      */
 template <class T>
 void CodaP<T>::fix_down(int k, int N){
@@ -166,14 +157,12 @@ void CodaP<T>::fix_down(int k, int N){
   	}
 }
 
-
 template <class T>
 void CodaP<T>::cambia_min(const tipo& e){
 
 	if(e < min())
 		heap[0] = e;
 }
-
 
 template <class T>
 void CodaP<T>::rimuovi(const tipo& e){
@@ -196,7 +185,6 @@ void CodaP<T>::rimuovi(const tipo& e){
 	}
 }
 
-
 template <class T>
 typename CodaP<T>::tipo CodaP<T>::max(){
 
@@ -214,7 +202,6 @@ typename CodaP<T>::tipo CodaP<T>::max(){
 	return copia[0];
 }
 
-
 //Trasforma un vettore generico in un max_heap
 template <class T>
 void CodaP<T>::heapify(tipo arr[], int n, int i)
@@ -223,15 +210,15 @@ void CodaP<T>::heapify(tipo arr[], int n, int i)
     int l = 2*i+1; // sinistro = 2*i + 1
     int r = 2*i+2; // destro = 2*i + 2
 
-    //Se il figlio sinistro è più grande della radice
+    //Se il figlio sinistro Ã¨ piÃ¹ grande della radice
     if (l < n && arr[l] > arr[max])
         max = l;
 
-    //Se il figlio destro è più grande del fratello sinistro
+    //Se il figlio destro Ã¨ piÃ¹ grande del fratello sinistro
     if (r < n && arr[r] > arr[max])
         max = r;
 
-    //Se la radice non è il più grande
+    //Se la radice non Ã¨ il piÃ¹ grande
     if (max != i)
     {
     	tipo tmp = arr[i];
