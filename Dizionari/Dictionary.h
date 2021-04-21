@@ -17,7 +17,6 @@
 #include "Dizionario.h" //Ok
 using namespace std;
 
-
 template <class K, class V>
 class Dictionary : public Dizionario<K,V>{
 
@@ -81,7 +80,6 @@ class Dictionary : public Dizionario<K,V>{
 		int lunghezza;
 };
 
-
 template <class K, class V>
 Dictionary<K,V>::Dictionary(){
 
@@ -89,7 +87,6 @@ Dictionary<K,V>::Dictionary(){
 	lunghezza = 0;
 	crea_dizionario();
 }
-
 
 template <class K, class V>
 Dictionary<K,V>::Dictionary(int dim){
@@ -99,13 +96,11 @@ Dictionary<K,V>::Dictionary(int dim){
 	crea_dizionario();
 }
 
-
 template <class K, class V>
 Dictionary<K,V>::~Dictionary(){
 
 	delete[] table;
 }
-
 
 template <class K, class V>
 void Dictionary<K,V>::crea_dizionario(){
@@ -115,13 +110,11 @@ void Dictionary<K,V>::crea_dizionario(){
 		table[i] = NULL;
 }
 
-
 template <class K, class V>
 bool Dictionary<K,V>::dizionario_vuoto() const{
 
 	return (lunghezza == 0);
 }
-
 
 //Data una chiave c, ci dice se table[c] � occupata o meno
 template <class K, class V>
@@ -129,7 +122,6 @@ bool Dictionary<K,V>::appartiene(const chiave& c) const{
 
 	return (recupera(c) != NULL);
 }
-
 
 /*
  * Convertiamo la chiave c in intero.
