@@ -10,7 +10,6 @@
 
 #include "bucket.h"
 
-
 //Classe astratta Dizionario
 template <class K, class V>
 class Dizionario{
