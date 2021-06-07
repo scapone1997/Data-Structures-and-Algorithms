@@ -4,4 +4,6 @@ Implementazione in C++ delle principali strutture dati studiate nel corso di Alg
 - Code con priorità;
 - Dizionari
 - Alberi binari e n-ari;
-- Grafi
+- Grafi;
+- Insiemi;
+- Polinomio;
